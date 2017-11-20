@@ -16,6 +16,7 @@ using System.Net.PeerToPeer;
 using System.Windows;
 using System.Net;
 using System.ServiceModel;
+using Shared;
 
 namespace DataDepositer
 {
@@ -793,8 +794,7 @@ namespace DataDepositer
             inputStream.Dispose();
         }
         #endregion
-
-
+        
         #region P2P command from Network Region
         internal void DisplayMessage(string message, string from)
         {

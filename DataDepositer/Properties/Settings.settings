@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DataDepositer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LocalStorageDefaultSize" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">1073741824</Value>
+    </Setting>
+    <Setting Name="localStrorageSize" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">1073741824</Value>
+    </Setting>
+    <Setting Name="DefaultPartsCount" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="DefaultPCCount" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="PartsCount" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="PCCount" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="DDNSAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">soft.rudicon.ddns.net</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

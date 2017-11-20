@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("DataDepositorSV")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("DataDepositer")]
+[assembly: AssemblyDescription("Distributed Net Storage for file.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DataDepositorSV")]
+[assembly: AssemblyCompany("RuDiCon Soft llc")]
+[assembly: AssemblyProduct("DataDepositer")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("DataDepositor")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("3b2834a2-9c9f-46b6-a2c5-8d2ebb55ac62")]
+[assembly: Guid("6fd74d76-f9d1-4087-acf9-96a52fbbd419")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

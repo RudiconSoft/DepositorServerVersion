@@ -1,7 +1,4 @@
-﻿// Written by Benjamin Watkins 2015
-// watkins.ben@gmail.com
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,7 +8,7 @@ using System.Threading;
 using NATUPNPLib;
 using System.Management;
 
-namespace P2PChat
+namespace DataDepositer
 {
     public class Client
     {
@@ -71,7 +68,7 @@ namespace P2PChat
         public Client()
         {
             // get Server IP 
-            ServerEndpoint = Client.GetIPEndPointFromHostName("softrudicon.ddns.net", 13050, false);
+            ServerEndpoint = Client.GetIPEndPointFromHostName("softrudicon.ddns.net", 13050, false); //@TODO Refactor. Use config.
 
             UDPClient.AllowNatTraversal(true);
             UDPClient.Client.SetIPProtectionLevel(IPProtectionLevel.Unrestricted);
@@ -84,7 +81,9 @@ namespace P2PChat
             var IPs = Dns.GetHostEntry(Dns.GetHostName()).AddressList.Where(ip => ip.AddressFamily == AddressFamily.InterNetwork);
 
             foreach (var IP in IPs)
+            {
                 LocalClientInfo.InternalAddresses.Add(IP);
+            }
         }
 
         public void ConnectOrDisconnect()
@@ -183,7 +182,7 @@ namespace P2PChat
             else
                 try
                 {
-                    UPnPMappings.Add(Port, "UDP", Port, InternetAccessAdapter.ToString(), true, "P2P Chat");
+                    UPnPMappings.Add(Port, "UDP", Port, InternetAccessAdapter.ToString(), true, "DataDepositer P2P");
                     return true;
                 }
                 catch
@@ -202,8 +201,13 @@ namespace P2PChat
                 {
                     try
                     {
-                        if (map.Protocol == "UDP" && map.Description == "P2P Chat" && map.InternalClient == InternetAccessAdapter.ToString())
+                        //if (map.Protocol == "UDP" && map.Description == "P2P Chat" && map.InternalClient == InternetAccessAdapter.ToString())
+                        //    PortMappingsToDelete.Add(map.ExternalPort);
+                        if (map.Protocol == "UDP" && map.Description == "DataDepositer P2P" &&
+                            map.InternalClient == InternetAccessAdapter.ToString())
+                        {
                             PortMappingsToDelete.Add(map.ExternalPort);
+                        }
                     }
                     catch
                     {
@@ -402,7 +406,7 @@ namespace P2PChat
                         Clients.Remove(CI);
                     }
                 }
-                else if(N.Type == NotificationsTypes.ServerShutdown)
+                else if (N.Type == NotificationsTypes.ServerShutdown)
                 {
                     if (OnResultsUpdate != null)
                         OnResultsUpdate.Invoke(this, "Server shutting down.");
@@ -508,12 +512,12 @@ namespace P2PChat
             if (OnResultsUpdate != null)
                 OnResultsUpdate.Invoke(this, "Attempting to Connect via LAN");
 
-            for (int ip = 0; ip < CI.InternalAddresses.Count; ip++) 
+            for (int ip = 0; ip < CI.InternalAddresses.Count; ip++)
             {
                 if (!TCPClient.Connected)
                     break;
 
-                IPAddress IP = CI.InternalAddresses[ip];              
+                IPAddress IP = CI.InternalAddresses[ip];
 
                 IPEndPoint EP = new IPEndPoint(IP, CI.InternalEndpoint.Port);
 
@@ -531,7 +535,7 @@ namespace P2PChat
                     Ack Responce = AckResponces.FirstOrDefault(a => a.RecipientID == CI.ID);
 
                     if (Responce != null)
-                    {                        
+                    {
                         if (OnResultsUpdate != null)
                             OnResultsUpdate.Invoke(this, "Received Ack Responce from " + EP.ToString());
 

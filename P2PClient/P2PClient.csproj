@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Interop.NATUPNPLib">
-      <HintPath>..\..\GetConnectedServer\GetConnectedServer\bin\Debug\Interop.NATUPNPLib.dll</HintPath>
+      <HintPath>..\DLLs\Interop.NATUPNPLib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

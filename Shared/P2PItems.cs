@@ -1,7 +1,4 @@
-﻿// Written by Benjamin Watkins 2015
-// watkins.ben@gmail.com
-
-using System;
+﻿using System;
 
 namespace Shared
 {

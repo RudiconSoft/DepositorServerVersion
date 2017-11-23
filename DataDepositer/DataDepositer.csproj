@@ -81,6 +81,10 @@
     <AssemblyOriginatorKeyFile>DataDepositer_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.NATUPNPLib">
+      <HintPath>..\DLLs\Interop.NATUPNPLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
     </Reference>
@@ -105,12 +109,14 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AESEnDecryption.cs" />
     <Compile Include="AsynchronousClient.cs" />
     <Compile Include="AsynchronousSocketListener.cs" />
     <Compile Include="BackgroundDNSUpdater.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandBuilder.cs" />
     <Compile Include="CommandQueue.cs" />

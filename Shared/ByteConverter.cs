@@ -1,7 +1,4 @@
-﻿// Written by Benjamin Watkins 2015
-// watkins.ben@gmail.com
-
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 namespace Shared
